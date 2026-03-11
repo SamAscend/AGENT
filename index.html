@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Allianz – Agen Resmi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:   #0B1F3A;
+      --navy2:  #122848;
+      --gold:   #C9A84C;
+      --gold2:  #E8C97A;
+      --cream:  #F8F4EE;
+      --white:  #FFFFFF;
+      --gray:   #8A96A3;
+      --light:  #EEF2F7;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 60px;
+      background: rgba(11,31,58,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      transition: padding .3s;
+    }
+    nav.scrolled { padding: 14px 60px; }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600; letter-spacing: .08em;
+      color: var(--white);
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,.75);
+      text-decoration: none; font-size: .85rem; letter-spacing: .06em;
+      text-transform: uppercase; font-weight: 400;
+      transition: color .25s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold); color: var(--navy) !important;
+      padding: 9px 22px; border-radius: 2px; font-weight: 500 !important;
+      transition: background .25s !important;
+    }
+    .nav-cta:hover { background: var(--gold2) !important; color: var(--navy) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #1a3a5c 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden; text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero-bg-lines {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-orb {
+      position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none;
+    }
+    .hero-orb-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(201,168,76,.12), transparent 70%);
+      top: -100px; right: -100px;
+    }
+    .hero-orb-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(26,90,140,.25), transparent 70%);
+      bottom: -80px; left: -80px;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 760px; }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid rgba(201,168,76,.5);
+      color: var(--gold); font-size: .75rem; letter-spacing: .2em;
+      text-transform: uppercase; padding: 7px 20px; border-radius: 100px;
+      margin-bottom: 28px;
+      animation: fadeUp .8s ease both;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 300; line-height: 1.15; color: var(--white);
+      margin-bottom: 22px;
+      animation: fadeUp .9s ease .1s both;
+    }
+    .hero-title em { color: var(--gold); font-style: italic; }
+
+    .hero-sub {
+      font-size: 1rem; color: rgba(255,255,255,.65); line-height: 1.75;
+      max-width: 520px; margin: 0 auto 40px;
+      animation: fadeUp .9s ease .2s both;
+    }
+
+    .hero-btns {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      animation: fadeUp .9s ease .3s both;
+    }
+
+    .btn-primary {
+      background: var(--gold); color: var(--navy);
+      padding: 14px 36px; border-radius: 2px; text-decoration: none;
+      font-weight: 500; font-size: .9rem; letter-spacing: .04em;
+      transition: background .25s, transform .2s, box-shadow .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover {
+      background: var(--gold2); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,168,76,.3);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.35); color: var(--white);
+      padding: 14px 36px; border-radius: 2px; text-decoration: none;
+      font-size: .9rem; letter-spacing: .04em;
+      transition: border-color .25s, background .25s;
+    }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,.08); }
+
+    .hero-stats {
+      display: flex; gap: 48px; justify-content: center; flex-wrap: wrap;
+      margin-top: 64px; padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      animation: fadeUp .9s ease .4s both;
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; color: var(--gold); font-weight: 600;
+    }
+    .stat-label { font-size: .78rem; color: rgba(255,255,255,.5); letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 100px 40px; }
+    .section-label {
+      font-size: .72rem; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--gold); font-weight: 500; margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.25;
+      color: var(--navy);
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--white);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      align-items: center; max-width: 1200px; margin: 0 auto;
+      padding: 100px 80px;
+    }
+
+    .about-visual { position: relative; }
+    .about-card-main {
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      border-radius: 4px; padding: 48px 40px;
+      color: white; position: relative; overflow: hidden;
+    }
+    .about-card-main::before {
+      content: '';
+      position: absolute; top: -40px; right: -40px;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,.2), transparent 70%);
+    }
+    .about-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-style: italic; line-height: 1.6;
+      color: rgba(255,255,255,.9); margin-bottom: 24px;
+    }
+    .about-agent { display: flex; align-items: center; gap: 14px; }
+    .agent-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+      color: var(--navy); font-weight: 600;
+    }
+    .agent-name { font-weight: 500; font-size: .9rem; }
+    .agent-title { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 2px; }
+
+    .about-badge-float {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--gold); color: var(--navy);
+      padding: 16px 24px; border-radius: 4px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 600; line-height: 1;
+      box-shadow: 0 12px 32px rgba(201,168,76,.3);
+    }
+    .about-badge-float small {
+      font-family: 'DM Sans', sans-serif; font-size: .65rem;
+      display: block; font-weight: 400; letter-spacing: .1em; opacity: .8;
+    }
+
+    .about-text .section-title { margin-bottom: 20px; }
+    .about-desc { color: #5a6a7a; line-height: 1.85; font-size: .95rem; margin-bottom: 14px; }
+    .about-perks { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .about-perks li { display: flex; align-items: center; gap: 12px; font-size: .9rem; color: var(--navy); }
+    .perk-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+    /* ── PRODUCTS ── */
+    #products { background: var(--cream); max-width: 100%; }
+    .products-header { text-align: center; margin-bottom: 64px; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px; max-width: 1200px; margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--white); border-radius: 4px;
+      overflow: hidden; position: relative;
+      border: 1px solid rgba(11,31,58,.08);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(11,31,58,.12);
+    }
+
+    .card-top {
+      background: linear-gradient(135deg, var(--navy) 0%, #163760 100%);
+      padding: 36px 32px 28px; position: relative; overflow: hidden;
+    }
+    .card-top::after {
+      content: '';
+      position: absolute; bottom: -24px; right: -24px;
+      width: 100px; height: 100px; border-radius: 50%;
+      border: 1px solid rgba(201,168,76,.25);
+    }
+    .card-top::before {
+      content: '';
+      position: absolute; bottom: -48px; right: -48px;
+      width: 140px; height: 140px; border-radius: 50%;
+      border: 1px solid rgba(201,168,76,.12);
+    }
+
+    .card-icon {
+      width: 44px; height: 44px; border-radius: 8px;
+      background: rgba(201,168,76,.18); display: flex;
+      align-items: center; justify-content: center; margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+
+    .card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem; font-weight: 600; color: var(--white);
+      letter-spacing: .03em;
+    }
+    .card-tagline { font-size: .8rem; color: var(--gold); margin-top: 4px; letter-spacing: .08em; text-transform: uppercase; }
+
+    .card-body { padding: 28px 32px; }
+    .card-desc { font-size: .88rem; color: #5a6a7a; line-height: 1.75; margin-bottom: 20px; }
+
+    .card-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
+    .card-features li { font-size: .83rem; color: var(--navy); display: flex; align-items: center; gap: 9px; }
+    .card-features li::before { content: '✦'; color: var(--gold); font-size: .6rem; flex-shrink: 0; }
+
+    .card-divider { height: 1px; background: rgba(11,31,58,.07); margin-bottom: 24px; }
+
+    .btn-wa {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; padding: 14px;
+      background: #25D366; color: white;
+      text-decoration: none; border-radius: 2px; font-weight: 500; font-size: .88rem;
+      transition: background .25s, transform .2s, box-shadow .2s;
+      letter-spacing: .03em;
+    }
+    .btn-wa:hover {
+      background: #1ebe5d; transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37,211,102,.3);
+    }
+    .btn-wa svg { width: 18px; height: 18px; }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      text-align: center; padding: 100px 40px;
+      position: relative; overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .contact-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+    #contact .section-label { justify-content: center; display: block; }
+    #contact .section-title { color: var(--white); margin-bottom: 18px; }
+    .contact-sub { color: rgba(255,255,255,.6); line-height: 1.75; margin-bottom: 40px; }
+
+    .contact-card {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(201,168,76,.2);
+      border-radius: 4px; padding: 32px; margin-bottom: 32px; display: inline-block; width: 100%;
+    }
+    .contact-wa-number {
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold);
+      letter-spacing: .05em; margin-bottom: 8px;
+    }
+    .contact-wa-label { font-size: .78rem; color: rgba(255,255,255,.5); letter-spacing: .15em; text-transform: uppercase; }
+
+    .btn-wa-big {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: #25D366; color: white; text-decoration: none;
+      padding: 16px 44px; border-radius: 2px; font-weight: 500; font-size: 1rem;
+      transition: background .25s, transform .2s, box-shadow .2s;
+    }
+    .btn-wa-big:hover {
+      background: #1ebe5d; transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(37,211,102,.35);
+    }
+    .btn-wa-big svg { width: 22px; height: 22px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #070f1c; padding: 28px 60px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); }
+    .footer-logo span { color: var(--gold); }
+    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.35); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      #about { grid-template-columns: 1fr; padding: 60px 28px; gap: 48px; }
+      section { padding: 72px 24px; }
+      footer { padding: 24px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">Allianz <span>Agent</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#products">Produk</a></li>
+    <li><a href="#contact" class="nav-cta">Hubungi Kami</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Agen Resmi Allianz Indonesia ✦</div>
+    <h1 class="hero-title">
+      Proteksi Cerdas untuk<br>
+      <em>Masa Depan Anda</em>
+    </h1>
+    <p class="hero-sub">
+      Kami hadir sebagai mitra terpercaya Anda dalam merencanakan perlindungan finansial, kesehatan, dan warisan jangka panjang bersama Allianz.
+    </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        Lihat Produk
+      </a>
+      <a href="#contact" class="btn-outline">Konsultasi Gratis</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">100+</div>
+        <div class="stat-label">Nasabah Aktif</div>
+      </div>
+      <div>
+        <div class="stat-num">5</div>
+        <div class="stat-label">Produk Unggulan</div>
+      </div>
+      <div>
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Siap Melayani</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div style="background: var(--white);">
+<section id="about">
+  <div class="about-visual reveal">
+    <div class="about-card-main">
+      <p class="about-quote">"Perlindungan terbaik adalah investasi terbaik yang bisa Anda berikan untuk keluarga Anda."</p>
+      <div class="about-agent">
+        <div class="agent-avatar">A</div>
+        <div>
+          <div class="agent-name">Agen Allianz</div>
+          <div class="agent-title">Agen Resmi Bersertifikasi</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-badge-float">
+      A+<small>Layanan</small>
+    </div>
+  </div>
+
+  <div class="about-text">
+    <div class="section-label reveal">Tentang Kami</div>
+    <h2 class="section-title reveal reveal-delay-1">Mitra Terpercaya<br><em>Perlindungan Anda</em></h2>
+    <p class="about-desc reveal reveal-delay-2">
+      Sebagai agen resmi Allianz Indonesia, kami berkomitmen memberikan solusi perlindungan finansial terbaik yang disesuaikan dengan kebutuhan setiap nasabah.
+    </p>
+    <p class="about-desc reveal reveal-delay-2">
+      Dengan pengalaman dan dedikasi penuh, kami siap membantu Anda menemukan produk yang paling sesuai untuk melindungi jiwa, kesehatan, dan masa depan keluarga Anda.
+    </p>
+    <ul class="about-perks reveal reveal-delay-3">
+      <li><span class="perk-dot"></span>Konsultasi personal & gratis tanpa paksaan</li>
+      <li><span class="perk-dot"></span>Proses pengajuan klaim yang mudah & cepat</li>
+      <li><span class="perk-dot"></span>Didukung Allianz – perusahaan asuransi global terpercaya</li>
+      <li><span class="perk-dot"></span>Respon WhatsApp cepat, siap melayani setiap saat</li>
+    </ul>
+  </div>
+</section>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-header">
+    <div class="section-label reveal">Produk Pilihan</div>
+    <h2 class="section-title reveal reveal-delay-1">Solusi Proteksi <em>Terlengkap</em></h2>
+  </div>
+
+  <div class="products-grid">
+
+    <!-- ACL -->
+    <div class="product-card reveal">
+      <div class="card-top">
+        <div class="card-icon">🛡️</div>
+        <div class="card-name">ACL</div>
+        <div class="card-tagline">Allianz Care Life</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Solusi perlindungan jiwa seumur hidup dengan manfaat komprehensif yang menjaga ketenangan pikiran Anda dan keluarga.</p>
+        <ul class="card-features">
+          <li>Perlindungan jiwa jangka panjang</li>
+          <li>Manfaat meninggal dunia</li>
+          <li>Nilai tunai yang terus bertumbuh</li>
+          <li>Premi fleksibel sesuai kemampuan</li>
+        </ul>
+        <div class="card-divider"></div>
+        <a href="https://wa.me/6281380603561?text=Halo,%20saya%20tertarik%20dengan%20produk%20ACL%20(Allianz%20Care%20Life).%20Boleh%20minta%20informasi%20lebih%20lanjut?" class="btn-wa" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Tanya via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- AFI -->
+    <div class="product-card reveal reveal-delay-1">
+      <div class="card-top">
+        <div class="card-icon">💰</div>
+        <div class="card-name">AFI</div>
+        <div class="card-tagline">Allianz Flexi Income</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Produk asuransi jiwa dengan manfaat penghasilan rutin yang memastikan finansial keluarga Anda tetap aman.</p>
+        <ul class="card-features">
+          <li>Penghasilan tetap berkala</li>
+          <li>Perlindungan jiwa sekaligus investasi</li>
+          <li>Fleksibilitas penarikan dana</li>
+          <li>Manfaat tambahan cacat total</li>
+        </ul>
+        <div class="card-divider"></div>
+        <a href="https://wa.me/6281380603561?text=Halo,%20saya%20tertarik%20dengan%20produk%20AFI%20(Allianz%20Flexi%20Income).%20Boleh%20minta%20informasi%20lebih%20lanjut?" class="btn-wa" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Tanya via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- LEGACY PRO -->
+    <div class="product-card reveal reveal-delay-2">
+      <div class="card-top">
+        <div class="card-icon">👑</div>
+        <div class="card-name">Legacy Pro</div>
+        <div class="card-tagline">Warisan Pilihan</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Rencanakan warisan terbaik untuk generasi berikutnya. Solusi premium untuk perlindungan aset dan perencanaan estate.</p>
+        <ul class="card-features">
+          <li>Uang pertanggungan besar</li>
+          <li>Perencanaan warisan terstruktur</li>
+          <li>Manfaat pajak & legal</li>
+          <li>Investasi jangka panjang premium</li>
+        </ul>
+        <div class="card-divider"></div>
+        <a href="https://wa.me/6281380603561?text=Halo,%20saya%20tertarik%20dengan%20produk%20Legacy%20Pro.%20Boleh%20minta%20informasi%20lebih%20lanjut?" class="btn-wa" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Tanya via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- LEGACY MAX -->
+    <div class="product-card reveal">
+      <div class="card-top">
+        <div class="card-icon">💎</div>
+        <div class="card-name">Legacy Max</div>
+        <div class="card-tagline">Proteksi Maksimal</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Tingkat perlindungan tertinggi dengan manfaat maksimum. Pilihan tepat bagi Anda yang menginginkan proteksi terkomprehensif.</p>
+        <ul class="card-features">
+          <li>Uang pertanggungan ekstra besar</li>
+          <li>Manfaat penyakit kritis</li>
+          <li>Perlindungan kecelakaan</li>
+          <li>Return of premium guaranteed</li>
+        </ul>
+        <div class="card-divider"></div>
+        <a href="https://wa.me/6281380603561?text=Halo,%20saya%20tertarik%20dengan%20produk%20Legacy%20Max.%20Boleh%20minta%20informasi%20lebih%20lanjut?" class="btn-wa" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Tanya via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- ACP -->
+    <div class="product-card reveal reveal-delay-1">
+      <div class="card-top">
+        <div class="card-icon">❤️</div>
+        <div class="card-name">ACP</div>
+        <div class="card-tagline">Allianz Care Protection</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Perlindungan kesehatan menyeluruh yang menanggung biaya rawat inap, operasi, dan berbagai kebutuhan medis Anda.</p>
+        <ul class="card-features">
+          <li>Rawat inap & rawat jalan</li>
+          <li>Perlindungan penyakit kritis</li>
+          <li>Cashless di jaringan RS luas</li>
+          <li>Limit tahunan yang tinggi</li>
+        </ul>
+        <div class="card-divider"></div>
+        <a href="https://wa.me/6281380603561?text=Halo,%20saya%20tertarik%20dengan%20produk%20ACP%20(Allianz%20Care%20Protection).%20Boleh%20minta%20informasi%20lebih%20lanjut?" class="btn-wa" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Tanya via WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label reveal">Hubungi Agen</div>
+    <h2 class="section-title reveal reveal-delay-1">Siap Membantu <em>Anda</em></h2>
+    <p class="contact-sub reveal reveal-delay-2">
+      Punya pertanyaan? Mau konsultasi dulu sebelum memutuskan? Kami siap merespons dengan cepat via WhatsApp — gratis & tanpa paksaan.
+    </p>
+    <div class="contact-card reveal reveal-delay-2">
+      <div class="contact-wa-number">0813 8060 3561</div>
+      <div class="contact-wa-label">Nomor WhatsApp Agen</div>
+    </div>
+    <a href="https://wa.me/6281380603561?text=Halo,%20saya%20ingin%20berkonsultasi%20mengenai%20produk%20Allianz.%20Bisa%20bantu%20saya?" class="btn-wa-big reveal reveal-delay-3" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat WhatsApp Sekarang
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Allianz <span>Agent</span></div>
+  <div class="footer-copy">© 2025 Agen Resmi Allianz Indonesia. Semua hak dilindungi.</div>
+</footer>
+
+<script>
+  // Navbar shrink on scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
