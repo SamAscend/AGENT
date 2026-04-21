@@ -3,38 +3,16 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Masalah | Our_Synergy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <title>Masalah | SYNERGY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
-  <style>
-    .problem-list {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin: 40px 0;
-    }
-    .problem-item {
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      border-left: 4px solid var(--gold);
-    }
-    .stat-big {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-    .warning-box-simple {
-      background: #FFF3E0;
-      border-radius: 16px;
-      padding: 24px;
-      margin: 32px 0;
-    }
-  </style>
 </head>
 <body>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/6281380603561?text=Halo%20saya%20tertarik%20jadi%20partner%20bisnis" target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <div class="lang-toggle">
   <button class="lang-btn active" data-lang="id">🇮🇩 ID</button>
@@ -44,7 +22,7 @@
 <nav id="navbar">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-icon">S</div>
-    our_<span>synergy</span>
+    <span>SYNERGY</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html" data-key="nav_home">Beranda</a></li>
@@ -52,7 +30,7 @@
     <li><a href="solusi.html" data-key="nav_solusi">Cara Kerja</a></li>
     <li><a href="challenge.html" data-key="nav_challenge">Keuntungan</a></li>
     <li><a href="income.html" data-key="nav_income">Bukti Income</a></li>
-    <li><a href="kontak.html" class="nav-cta" data-key="nav_kontak">Gabung Sekarang</a></li>
+    <li><a href="kontak.html" class="nav-cta" data-key="nav_kontak">Gabung</a></li>
   </ul>
 </nav>
 
@@ -60,51 +38,65 @@
   <a href="index.html" class="back-btn">← <span data-key="back_home">Kembali ke Beranda</span></a>
 </div>
 
-<section class="page-header" style="background: linear-gradient(135deg, #0F2A3E, #1A3A4F);">
-  <div class="section-label"><span data-key="rencana_title">Ini Masalahnya</span></div>
-  <h1><span data-key="rencana_sub">Apakah kamu mengalami <em>salah satu</em> dari ini?</span></h1>
+<section class="page-header">
+  <div class="section-label"><span data-key="rencana_title">Realita Hari Ini</span></div>
+  <h1><span data-key="rencana_sub">Apakah kamu mengalami</span> <em>salah satu dari ini?</em></h1>
 </section>
 
 <div class="section-wrap">
-  <div class="problem-list">
-    <div class="problem-item reveal">
-      <div class="stat-big">💰</div>
+  <div class="problem-grid">
+    <div class="problem-card reveal">
+      <div class="problem-icon">💰</div>
       <h3 data-key="problem1_title">Penghasilan cuma cukup-cukup aja</h3>
-      <p data-key="problem1_desc">Setiap bulan gaji masuk, langsung habis buat cicilan, makan, transport. Nggak ada sisa buat nabung atau investasi.</p>
+      <p data-key="problem1_desc">Setiap bulan gaji masuk, langsung habis buat cicilan, makan, transport. Nggak ada sisa buat nabung.</p>
     </div>
-    <div class="problem-item reveal">
-      <div class="stat-big">📉</div>
+    <div class="problem-card reveal">
+      <div class="problem-icon">📉</div>
       <h3 data-key="problem2_title">Kalah sama inflasi</h3>
       <p data-key="problem2_desc">Harga kebutuhan naik terus, tapi penghasilan tetap. Uang yang disimpan jadi nggak berasa nilainya.</p>
     </div>
-    <div class="problem-item reveal">
-      <div class="stat-big">😰</div>
+    <div class="problem-card reveal">
+      <div class="problem-icon">😰</div>
       <h3 data-key="problem3_title">Takut nggak punya tabungan hari tua</h3>
       <p data-key="problem3_desc">Mikir pensiun atau kalau sakit, tabungan nggak cukup. Apalagi kalau cuma andalin gaji doang.</p>
     </div>
-    <div class="problem-item reveal">
-      <div class="stat-big">🔄</div>
+    <div class="problem-card reveal">
+      <div class="problem-icon">🔄</div>
       <h3 data-key="problem4_title">Capek kerja keras tapi finansial stagnan</h3>
       <p data-key="problem4_desc">Lembur terus, kerja banting tulang, tapi di rekening nggak kelihatan perubahan berarti.</p>
     </div>
   </div>
 
-  <div class="warning-box-simple reveal">
+  <div class="warning-box reveal">
     <strong>⚠️ <span data-key="warning_text">FAKTA:</span></strong>
     <p style="margin-top: 12px;" data-key="warning_desc">Kebanyakan orang cuma mengandalkan satu sumber penghasilan. Kalau sumber itu berhenti (resign, sakit, pensiun), langsung krisis finansial.</p>
   </div>
 
-  <div class="info-card gold-bg reveal" style="text-align: center;">
-    <h3 data-key="solution_teaser">Kalau kamu merasa 2 dari 4 masalah di atas...</h3>
-    <p style="margin-top: 16px;" data-key="solution_teaser_desc">Berarti kamu punya masalah yang SAMA dengan partner kami yang sekarang. Dan mereka sudah menemukan jalan keluarnya.</p>
-    <a href="solusi.html" class="btn-gold" style="margin-top: 24px; display: inline-block;" data-key="lihat_solusi">Lihat Solusinya →</a>
+  <div class="benefit-card reveal" style="background: var(--primary); color: white; text-align: center; border: 1px solid rgba(245,158,11,0.3);">
+    <h3 style="color: var(--gold-light);" data-key="solution_teaser">Kalau kamu merasa 2 dari 4 masalah di atas...</h3>
+    <p style="margin-top: 12px;" data-key="solution_teaser_desc">Berarti kamu punya masalah yang SAMA dengan partner kami yang sekarang. Dan mereka sudah menemukan jalan keluarnya.</p>
+    <a href="solusi.html" class="btn-primary" style="margin-top: 24px; display: inline-block; background: var(--gold); color: var(--primary);" data-key="lihat_solusi">Lihat Solusinya →</a>
   </div>
 </div>
 
 <footer>
-  <div class="footer-copy">© 2026 our_synergy — Solusi Finansial untuk Masa Depan.</div>
+  <div class="footer-copy">© 2026 SYNERGY — Bangun Masa Depan Finansial.</div>
 </footer>
 
 <script src="script.js"></script>
+
+<!-- STICKY BOTTOM CTA -->
+<div class="sticky-cta">
+  <div class="sticky-container">
+    <p class="sticky-text">💬 <span data-key="sticky_text">Siap Bangun Passive Income?</span></p>
+    <a href="https://wa.me/6281380603561" class="btn-sticky" data-key="sticky_btn">Konsultasi Gratis →</a>
+  </div>
+</div>
+
+<!-- FLOATING DECORATIONS -->
+<div class="floating-shape shape-1"></div>
+<div class="floating-shape shape-2"></div>
+<div class="floating-shape shape-3"></div>
+
 </body>
 </html>
