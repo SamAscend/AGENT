@@ -3,9 +3,36 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rencana | Our_Synergy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <title>Masalah | Our_Synergy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    .problem-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .problem-item {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--gold);
+    }
+    .stat-big {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .warning-box-simple {
+      background: #FFF3E0;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -21,86 +48,61 @@
   </a>
   <ul class="nav-links">
     <li><a href="index.html" data-key="nav_home">Beranda</a></li>
-    <li><a href="rencana.html" data-key="nav_rencana">Rencana</a></li>
-    <li><a href="solusi.html" data-key="nav_solusi">Solusi</a></li>
-    <li><a href="challenge.html" data-key="nav_challenge">Challenge</a></li>
-    <li><a href="income.html" data-key="nav_income">Income</a></li>
+    <li><a href="rencana.html" data-key="nav_rencana">Masalah</a></li>
+    <li><a href="solusi.html" data-key="nav_solusi">Cara Kerja</a></li>
+    <li><a href="challenge.html" data-key="nav_challenge">Keuntungan</a></li>
+    <li><a href="income.html" data-key="nav_income">Bukti Income</a></li>
     <li><a href="kontak.html" class="nav-cta" data-key="nav_kontak">Gabung Sekarang</a></li>
   </ul>
 </nav>
 
-<!-- BACK TO HOME BUTTON -->
 <div class="back-home">
   <a href="index.html" class="back-btn">← <span data-key="back_home">Kembali ke Beranda</span></a>
 </div>
 
-<section class="page-header">
-  <div class="section-label"><span data-key="rencana_title">Fakta Hidup & Masalah</span></div>
-  <h1><em data-key="rencana_sub">Kerja / Bisnis → Gaji → Kebutuhan Hidup → Nabung (Kalo ada sisa)</em></h1>
+<section class="page-header" style="background: linear-gradient(135deg, #0F2A3E, #1A3A4F);">
+  <div class="section-label"><span data-key="rencana_title">Ini Masalahnya</span></div>
+  <h1><span data-key="rencana_sub">Apakah kamu mengalami <em>salah satu</em> dari ini?</span></h1>
 </section>
 
 <div class="section-wrap">
-  <div class="grid-2">
-    <div class="info-card reveal">
-      <div style="font-size: 3rem; margin-bottom: 16px;">💼</div>
-      <h3 data-key="fakta_card1_title">Realita Kebanyakan Orang</h3>
-      <p data-key="fakta_card1_desc">Penghasilan masuk, langsung habis untuk kebutuhan. Tabungan cuma sisa, bukan prioritas. Akhirnya susah kumpulin aset.</p>
+  <div class="problem-list">
+    <div class="problem-item reveal">
+      <div class="stat-big">💰</div>
+      <h3 data-key="problem1_title">Penghasilan cuma cukup-cukup aja</h3>
+      <p data-key="problem1_desc">Setiap bulan gaji masuk, langsung habis buat cicilan, makan, transport. Nggak ada sisa buat nabung atau investasi.</p>
     </div>
-    <div class="info-card gold-bg reveal">
-      <div style="font-size: 3rem; margin-bottom: 16px;">⚠️</div>
-      <h3 data-key="fakta_card2_title">Yang Terjadi Jika Hanya Andalkan Gaji</h3>
-      <ul style="list-style: none; line-height: 2;">
-        <li>✖️ <span data-key="fakta_card2_item1">Susah ngumpulin aset</span></li>
-        <li>✖️ <span data-key="fakta_card2_item2">Kalah sama inflasi</span></li>
-        <li>✖️ <span data-key="fakta_card2_item3">Kaget pas hari tua tabungan tidak cukup</span></li>
-      </ul>
+    <div class="problem-item reveal">
+      <div class="stat-big">📉</div>
+      <h3 data-key="problem2_title">Kalah sama inflasi</h3>
+      <p data-key="problem2_desc">Harga kebutuhan naik terus, tapi penghasilan tetap. Uang yang disimpan jadi nggak berasa nilainya.</p>
     </div>
-  </div>
-
-  <div class="warning-box reveal">
-    <strong>⚠️ WARNING !!!</strong><br/>
-    <span data-key="warning_text">BIAYA KESEHATAN SEMAKIN MAHAL - INFLASI MEMBUAT NILAI UANG TURUN</span>
-  </div>
-
-  <div class="section-label" style="margin-top: 60px;"><span data-key="masalah_title">Tukar Waktu dengan Uang = Batas Pendapatan</span></div>
-  
-  <div class="grid-2">
-    <div class="info-card reveal">
-      <div class="stat-number" data-key="masalah_card1">Inflasi + Biaya Hidup ↑</div>
-      <p data-key="masalah_card1_desc">Pendapatan tetap, tapi kebutuhan naik terus. Hasilnya: tabungan tergerus.</p>
+    <div class="problem-item reveal">
+      <div class="stat-big">😰</div>
+      <h3 data-key="problem3_title">Takut nggak punya tabungan hari tua</h3>
+      <p data-key="problem3_desc">Mikir pensiun atau kalau sakit, tabungan nggak cukup. Apalagi kalau cuma andalin gaji doang.</p>
     </div>
-    <div class="info-card reveal">
-      <div class="stat-number" data-key="masalah_card2">Kaget di Hari Tua</div>
-      <p data-key="masalah_card2_desc">Tabungan tidak cukup karena hanya mengandalkan gaji tanpa sistem income berulang.</p>
+    <div class="problem-item reveal">
+      <div class="stat-big">🔄</div>
+      <h3 data-key="problem4_title">Capek kerja keras tapi finansial stagnan</h3>
+      <p data-key="problem4_desc">Lembur terus, kerja banting tulang, tapi di rekening nggak kelihatan perubahan berarti.</p>
     </div>
   </div>
 
-  <div class="warning-box reveal">
-    <strong>💡 INI PROBLEM NYATA ?</strong> Iya, Buat Banyak Orang.<br/>
-    Kalo cuma mengandalkan gaji…. ini yang akan terjadi.
+  <div class="warning-box-simple reveal">
+    <strong>⚠️ <span data-key="warning_text">FAKTA:</span></strong>
+    <p style="margin-top: 12px;" data-key="warning_desc">Kebanyakan orang cuma mengandalkan satu sumber penghasilan. Kalau sumber itu berhenti (resign, sakit, pensiun), langsung krisis finansial.</p>
   </div>
 
-  <div style="margin-top: 60px;">
-    <h3 style="font-size: 1.8rem; font-family: 'Cormorant Garamond';" class="reveal" data-key="pilihan_title">Kamu disuruh pilih.. Kamu Pilih Yang mana ?</h3>
-    <div class="grid-2" style="margin-top: 24px;">
-      <div class="info-card reveal" style="text-align: center;">
-        <div class="stat-number" data-key="pilihan_card1">Nabung 2 Juta/bulan</div>
-        <p data-key="pilihan_card1_desc">Rizki (BE) - Modal sendiri 2jt/bulan × 24 bulan</p>
-      </div>
-      <div class="info-card gold-bg reveal" style="text-align: center;">
-        <div class="stat-number" style="color: var(--gold);" data-key="pilihan_card2">Ngajak 5 orang</div>
-        <p data-key="pilihan_card2_desc">Nabung 2 Juta/Bulan - Modal Rizki tertutup + bonus</p>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top: 48px; text-align: center;">
-    <a href="solusi.html" class="btn-gold" data-key="hero_btn1">Lihat Solusi →</a>
+  <div class="info-card gold-bg reveal" style="text-align: center;">
+    <h3 data-key="solution_teaser">Kalau kamu merasa 2 dari 4 masalah di atas...</h3>
+    <p style="margin-top: 16px;" data-key="solution_teaser_desc">Berarti kamu punya masalah yang SAMA dengan partner kami yang sekarang. Dan mereka sudah menemukan jalan keluarnya.</p>
+    <a href="solusi.html" class="btn-gold" style="margin-top: 24px; display: inline-block;" data-key="lihat_solusi">Lihat Solusinya →</a>
   </div>
 </div>
 
 <footer>
-  <div class="footer-copy">© 2026 our_synergy — Official Allianz Partner. BE to BP Challenge 2026.</div>
+  <div class="footer-copy">© 2026 our_synergy — Solusi Finansial untuk Masa Depan.</div>
 </footer>
 
 <script src="script.js"></script>

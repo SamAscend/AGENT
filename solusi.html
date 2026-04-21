@@ -3,9 +3,46 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Solusi | Our_Synergy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <title>Cara Kerja | Our_Synergy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin: 48px 0;
+    }
+    .step {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+      flex-shrink: 0;
+    }
+    .step-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 768px) {
+      .step { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
@@ -21,10 +58,10 @@
   </a>
   <ul class="nav-links">
     <li><a href="index.html" data-key="nav_home">Beranda</a></li>
-    <li><a href="rencana.html" data-key="nav_rencana">Rencana</a></li>
-    <li><a href="solusi.html" data-key="nav_solusi">Solusi</a></li>
-    <li><a href="challenge.html" data-key="nav_challenge">Challenge</a></li>
-    <li><a href="income.html" data-key="nav_income">Income</a></li>
+    <li><a href="rencana.html" data-key="nav_rencana">Masalah</a></li>
+    <li><a href="solusi.html" data-key="nav_solusi">Cara Kerja</a></li>
+    <li><a href="challenge.html" data-key="nav_challenge">Keuntungan</a></li>
+    <li><a href="income.html" data-key="nav_income">Bukti Income</a></li>
     <li><a href="kontak.html" class="nav-cta" data-key="nav_kontak">Gabung Sekarang</a></li>
   </ul>
 </nav>
@@ -33,37 +70,48 @@
   <a href="index.html" class="back-btn">← <span data-key="back_home">Kembali ke Beranda</span></a>
 </div>
 
-<section class="page-header">
-  <div class="section-label"><span data-key="solusi_title">2 Langkah Membangun Bisnis Income</span></div>
-  <h1><em>2 Langkah</em> <span data-key="solusi_title">Membangun Bisnis Income</span></h1>
+<section class="page-header" style="background: linear-gradient(135deg, #0F2A3E, #1A3A4F);">
+  <div class="section-label"><span data-key="solusi_title">Solusi Sederhana</span></div>
+  <h1><em>3 Langkah</em> <span data-key="solusi_title2">Menuju Penghasilan Tambahan</span></h1>
 </section>
 
 <div class="section-wrap">
-  <div class="grid-2">
-    <div class="info-card reveal">
-      <div style="font-size: 2.5rem;">1️⃣</div>
-      <h3 style="margin: 12px 0;" data-key="solusi_step1">Jadi Business Executive (BE)</h3>
-      <p data-key="solusi_step1_desc">Mulai dari modal kecil, bangun jaringan sendiri.</p>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3 data-key="step1_title">Daftar & Ikut Program</h3>
+        <p data-key="step1_desc">Modal awal kecil, fleksibel. Kamu bisa mulai sambil tetap kerja atau bisnis yang sudah ada. Kami bimbing dari nol.</p>
+      </div>
     </div>
-    <div class="info-card gold-bg reveal">
-      <div style="font-size: 2.5rem;">2️⃣</div>
-      <h3 style="margin: 12px 0; color: var(--gold2);" data-key="solusi_step2">Naik ke Business Partner (BP)</h3>
-      <p data-key="solusi_step2_desc">Overriding generasi, passive income dari tim. Penghasilan maksimal hingga 270 Juta/bulan.</p>
+    <div class="step reveal">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3 data-key="step2_title">Bangun Tim Kecil</h3>
+        <p data-key="step2_desc">Ajak 5 orang yang punya masalah finansial sama seperti kamu. Nggak perlu jualan, cukup ajak mereka bergabung.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3 data-key="step3_title">Dapatkan Passive Income</h3>
+        <p data-key="step3_desc">Setiap tim berkembang, kamu dapat income berulang (overriding). Nggak perlu kerja keras terus, sistem yang bekerja.</p>
+      </div>
     </div>
   </div>
 
-  <div class="info-card gold-bg reveal" style="background: var(--navy); text-align: center;">
-    <h3 style="font-size: 1.8rem;" data-key="konsep_title">💎 Konsep Rizki BP</h3>
-    <p style="margin-top: 12px;" data-key="konsep_desc">Rizki = BP (Billion Unit) atau unit maksimal Rp 13,5 juta - 25 juta/bulan selama 24 bulan. Reward: Trip Melbourne (Champion Unit)</p>
+  <div class="info-card gold-bg reveal" style="text-align: center;">
+    <h3 data-key="sistem_title">Kok bisa?</h3>
+    <p data-key="sistem_desc">Kami pakai sistem overriding dari Allianz. Semakin besar tim yang kamu bangun, semakin besar juga penghasilan bulanan kamu. Sederhananya: kamu dibayar atas pertumbuhan tim, bukan cuma hasil jualan pribadi.</p>
   </div>
 
   <div style="margin-top: 48px; text-align: center;">
-    <a href="challenge.html" class="btn-navy" style="background: var(--navy); color: white; padding: 14px 32px; text-decoration: none; border-radius: 2px; display: inline-block;" data-key="hero_btn1">Selanjutnya: BE to BP Challenge →</a>
+    <a href="challenge.html" class="btn-gold" data-key="next_btn">Lihat Keuntungannya →</a>
   </div>
 </div>
 
 <footer>
-  <div class="footer-copy">© 2026 our_synergy — Official Allianz Partner. BE to BP Challenge 2026.</div>
+  <div class="footer-copy">© 2026 our_synergy — Solusi Finansial untuk Masa Depan.</div>
 </footer>
 
 <script src="script.js"></script>

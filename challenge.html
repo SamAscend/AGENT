@@ -3,9 +3,27 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Challenge | Our_Synergy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <title>Keuntungan | Our_Synergy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin: 48px 0;
+    }
+    .benefit-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .benefit-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .benefit-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .benefit-card h3 { margin-bottom: 12px; color: var(--dark); }
+  </style>
 </head>
 <body>
 
@@ -21,10 +39,10 @@
   </a>
   <ul class="nav-links">
     <li><a href="index.html" data-key="nav_home">Beranda</a></li>
-    <li><a href="rencana.html" data-key="nav_rencana">Rencana</a></li>
-    <li><a href="solusi.html" data-key="nav_solusi">Solusi</a></li>
-    <li><a href="challenge.html" data-key="nav_challenge">Challenge</a></li>
-    <li><a href="income.html" data-key="nav_income">Income</a></li>
+    <li><a href="rencana.html" data-key="nav_rencana">Masalah</a></li>
+    <li><a href="solusi.html" data-key="nav_solusi">Cara Kerja</a></li>
+    <li><a href="challenge.html" data-key="nav_challenge">Keuntungan</a></li>
+    <li><a href="income.html" data-key="nav_income">Bukti Income</a></li>
     <li><a href="kontak.html" class="nav-cta" data-key="nav_kontak">Gabung Sekarang</a></li>
   </ul>
 </nav>
@@ -33,44 +51,47 @@
   <a href="index.html" class="back-btn">← <span data-key="back_home">Kembali ke Beranda</span></a>
 </div>
 
-<section class="page-header">
-  <div class="section-label"><span data-key="challenge_title">BE → BP Challenge</span></div>
-  <h1>BE → BP <em>Challenge</em></h1>
+<section class="page-header" style="background: linear-gradient(135deg, #0F2A3E, #1A3A4F);">
+  <div class="section-label"><span data-key="challenge_title">Yang Kamu Dapatkan</span></div>
+  <h1><span data-key="benefit_main">Bukan cuma <em>income tambahan</em></span></h1>
 </section>
 
 <div class="section-wrap">
-  <div class="info-card reveal" style="margin-bottom: 32px;">
-    <h3>🏆 <span data-key="be_bp_title">BE TO BP CHALLENGE</span></h3>
-    <ul style="margin-top: 16px; line-height: 2;">
-      <li>✅ <span data-key="be_bp_item1">BE yang capai BP dalam periode 3 bulan sejak join dengan segitiga 100 → iPad + Cash 10 Juta</span></li>
-      <li>✅ <span data-key="be_bp_item2">BE yang capai BP dalam periode 6 bulan dengan segitiga 100 → iPad + Cash 5 Juta</span></li>
-    </ul>
+  <div class="benefit-grid">
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">📱+💰</div>
+      <h3 data-key="benefit1_title">Hadiah Langsung</h3>
+      <p data-key="benefit1_desc">Jadi pemimpin tim dalam 3 bulan → iPad + Cash 10 Juta. Dalam 6 bulan → iPad + Cash 5 Juta.</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">💸</div>
+      <h3 data-key="benefit2_title">Komisi Tambahan hingga 40%</h3>
+      <p data-key="benefit2_desc">Golden Path: makin besar pencapaian tim, makin besar persentase komisi kamu.</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">✈️</div>
+      <h3 data-key="benefit3_title">Reward Trip Luar Negeri</h3>
+      <p data-key="benefit3_desc">Champion Unit → trip ke Melbourne. Plus bonus jutaan rupiah dari challenge berkala.</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">🏆</div>
+      <h3 data-key="benefit4_title">Bonus Mingguan</h3>
+      <p data-key="benefit4_desc">LLS Weekly Challenge: submit minimal 18 Juta ALP atau rekrut anggota baru → Voucher 100rb.</p>
+    </div>
   </div>
 
-  <div class="info-card gold-bg reveal" style="margin-bottom: 32px;">
-    <h3>📅 <span data-key="lls_title">LLS WEEKLY CHALLENGE</span></h3>
-    <p><span data-key="lls_desc">BE & BP melakukan submit min 18 Juta ALP atau rekrut tiap periode Senin - Minggu → Voucher MAP 100 ribu</span></p>
+  <div class="warning-box reveal" style="background: var(--gold-light); border-left-color: var(--gold-dark);">
+    <strong>🎯 <span data-key="asn_title">ASN Early Sprint 2026</span></strong>
+    <p style="margin-top: 8px;" data-key="asn_desc">Capai 200 Juta ALP di periode 1 Jan - 28 Feb 2026 → Reward Rp 10.000.000 langsung!</p>
   </div>
 
-  <div class="info-card reveal" style="margin-bottom: 32px;">
-    <h3>⚡ <span data-key="asn_title">ASN EARLY SPRINT 2026</span></h3>
-    <p><span data-key="asn_desc">BE & BP capai 200 Juta ALP di periode 1 Jan - 28 Feb 2026 → Reward Rp 10.000.000</span></p>
-    <hr style="margin: 16px 0; opacity: 0.2;"/>
-    <h3>🏅 <span data-key="golden_title">GOLDEN PATH (Extra komisi hingga 40%)</span></h3>
-    <ul>
-      <li><span data-key="golden_tier1">Tier 1: 150 Juta ALP → +20% komisi</span></li>
-      <li><span data-key="golden_tier2">Tier 2: 300 Juta ALP → +30% komisi</span></li>
-      <li><span data-key="golden_tier3">Tier 3: 450 Juta ALP → +40% komisi</span></li>
-    </ul>
-  </div>
-
-  <div style="margin-top: 40px; text-align: center;">
-    <a href="income.html" class="btn-gold" data-key="hero_btn1">Lihat Potensi Income BP →</a>
+  <div style="text-align: center; margin-top: 48px;">
+    <a href="income.html" class="btn-gold" data-key="lihat_income">Lihat Bukti Income Nyata →</a>
   </div>
 </div>
 
 <footer>
-  <div class="footer-copy">© 2026 our_synergy — Official Allianz Partner. BE to BP Challenge 2026.</div>
+  <div class="footer-copy">© 2026 our_synergy — Solusi Finansial untuk Masa Depan.</div>
 </footer>
 
 <script src="script.js"></script>
