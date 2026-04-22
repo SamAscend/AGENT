@@ -6,6 +6,72 @@ if (navbar) {
   });
 }
 
+// ========== PRELOADER / LOADING SCREEN ==========
+// Buat elemen preloader jika belum ada
+if (!document.querySelector('.preloader')) {
+  const preloader = document.createElement('div');
+  preloader.className = 'preloader';
+  preloader.innerHTML = `
+    <div class="loader">
+      <div class="loader-logo">
+        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="preloaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#D4AF37"/>
+              <stop offset="100%" stop-color="#B8962E"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="45" fill="url(#preloaderGrad)"/>
+          <circle cx="50" cy="50" r="38" fill="#0A2540"/>
+          <path d="M35 35 Q35 28 42 28 L58 28 Q65 28 65 35 Q65 42 58 42 L42 42 Q35 42 35 49 Q35 56 42 56 L58 56 Q65 56 65 63 Q65 70 58 70 L42 70 Q35 70 35 63" 
+                stroke="url(#preloaderGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="loader-text">SYNERGY</div>
+      <div class="loader-bar"></div>
+    </div>
+  `;
+  document.body.appendChild(preloader);
+}
+
+// Sembunyikan preloader setelah halaman load
+window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('hide');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }, 800);
+  }
+});
+
+// Tampilkan preloader saat pindah halaman
+document.querySelectorAll('a').forEach(link => {
+  // Hanya untuk link internal (bukan external dan bukan anchor)
+  if (link.href && link.href.startsWith(window.location.origin) && !link.href.includes('#') && link.target !== '_blank' && !link.classList.contains('no-loader')) {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href !== '#' && !href.startsWith('javascript:')) {
+        e.preventDefault();
+        
+        // Tampilkan preloader lagi
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+          preloader.style.display = 'flex';
+          preloader.classList.remove('hide');
+        }
+        
+        // Pindah ke halaman tujuan setelah delay
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      }
+    });
+  }
+});
+
 // ========== SLIDER FUNCTION ==========
 let currentSlide = 0;
 const track = document.getElementById('sliderTrack');
@@ -66,7 +132,7 @@ if (track && slides.length > 0) {
   }, 5000);
 }
 
-// ========== BILINGUAL SYSTEM (SEDERHANA) ==========
+// ========== BILINGUAL SYSTEM ==========
 const translations = {
   id: {
     nav_home: 'Beranda',

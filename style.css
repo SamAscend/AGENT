@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-track { background: var(--border); }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
 
-/* Language Toggle - Pindah ke pojok KIRI BAWAH biar ga ngalangin */
+/* Language Toggle - Pojok KIRI BAWAH */
 .lang-toggle {
   position: fixed;
   bottom: 20px;
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--gold);
 }
 
-/* Navbar - Navy (15%) */
+/* Navbar - Navy */
 nav {
   position: fixed;
   top: 0;
@@ -108,32 +108,16 @@ nav.scrolled {
   gap: 12px;
 }
 .nav-logo-icon {
-  width: 40px;
-  height: 40px;
-  background: var(--gold);
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  color: var(--navy);
-  font-weight: 800;
-  position: relative;
+  flex-shrink: 0;
 }
-.nav-logo-icon::before {
-  content: '👑';
-  font-size: 0.8rem;
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background: var(--gold);
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.5rem;
+.nav-logo-icon svg {
+  width: 100%;
+  height: 100%;
 }
 .nav-logo-text {
   display: flex;
@@ -205,7 +189,7 @@ nav.scrolled {
   color: white;
 }
 
-/* Hero Section - PUTIH (70%) */
+/* Hero Section - PUTIH */
 .hero {
   min-height: 100vh;
   background: var(--white-bg);
@@ -424,7 +408,7 @@ nav.scrolled {
   font-size: 1rem;
 }
 
-/* Page Header - Navy (untuk halaman lain) */
+/* Page Header - Navy */
 .page-header {
   background: var(--navy);
   padding: 100px 80px 60px;
@@ -685,6 +669,100 @@ footer {
   margin: 32px 0;
 }
 .text-gold { color: var(--gold); }
+
+/* Tambahan CSS untuk ikon profesional */
+.icon-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  font-family: monospace;
+}
+
+.icon-symbol {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.testimonial-rating {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+/* ========== PRELOADER / LOADING SCREEN ========== */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--navy);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader {
+  text-align: center;
+}
+
+.loader-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loader-logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.loader-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-top: 20px;
+}
+
+.loader-bar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.loader-bar::after {
+  content: '';
+  display: block;
+  width: 40%;
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  animation: loading 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}
 
 /* Responsive */
 @media (max-width: 1024px) {

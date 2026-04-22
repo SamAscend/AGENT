@@ -16,8 +16,30 @@
 
 <nav id="navbar">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">S</div>
-    <span>SYNERGY</span>
+    <div class="nav-logo-icon">
+      <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#D4AF37"/>
+            <stop offset="50%" stop-color="#E8C97A"/>
+            <stop offset="100%" stop-color="#B8962E"/>
+          </linearGradient>
+          <filter id="logoShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+          </filter>
+        </defs>
+        <circle cx="50" cy="50" r="45" fill="url(#logoGrad)" filter="url(#logoShadow)"/>
+        <circle cx="50" cy="50" r="38" fill="#0A2540"/>
+        <path d="M35 35 Q35 28 42 28 L58 28 Q65 28 65 35 Q65 42 58 42 L42 42 Q35 42 35 49 Q35 56 42 56 L58 56 Q65 56 65 63 Q65 70 58 70 L42 70 Q35 70 35 63" 
+              stroke="url(#logoGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="50" cy="28" r="2.5" fill="#D4AF37"/>
+        <circle cx="50" cy="70" r="2.5" fill="#D4AF37"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text">
+      <div class="nav-logo-main">SYNERGY<span>.</span></div>
+      <div class="nav-logo-sub">business partner</div>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html" data-key="nav_home">Beranda</a></li>
@@ -37,28 +59,27 @@
 <div class="section-wrap">
   <div class="problem-grid">
     <div class="problem-card reveal">
-      <div class="problem-icon">💰</div>
+      <div class="problem-icon">§</div>
       <h3 data-key="problem1_title">Penghasilan cuma cukup-cukup aja</h3>
       <p data-key="problem1_desc">Setiap bulan gaji masuk, langsung habis buat cicilan, makan, transport. Nggak ada sisa buat nabung.</p>
     </div>
     <div class="problem-card reveal">
-      <div class="problem-icon">📉</div>
+      <div class="problem-icon">↓</div>
       <h3 data-key="problem2_title">Kalah sama inflasi</h3>
       <p data-key="problem2_desc">Harga kebutuhan naik terus, tapi penghasilan tetap. Uang yang disimpan jadi nggak berasa nilainya.</p>
     </div>
     <div class="problem-card reveal">
-      <div class="problem-icon">😰</div>
+      <div class="problem-icon">!</div>
       <h3 data-key="problem3_title">Takut nggak punya tabungan hari tua</h3>
       <p data-key="problem3_desc">Mikir pensiun atau kalau sakit, tabungan nggak cukup. Apalagi kalau cuma andalin gaji doang.</p>
     </div>
     <div class="problem-card reveal">
-      <div class="problem-icon">🔄</div>
+      <div class="problem-icon">↻</div>
       <h3 data-key="problem4_title">Capek kerja keras tapi finansial stagnan</h3>
       <p data-key="problem4_desc">Lembur terus, kerja banting tulang, tapi di rekening nggak kelihatan perubahan berarti.</p>
     </div>
   </div>
 
-  <!-- Gambar ilustrasi -->
   <div style="margin: 40px 0; text-align: center;">
     <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=300&fit=crop" alt="Financial struggle illustration" style="width: 100%; max-width: 600px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
   </div>
@@ -81,7 +102,6 @@
 
 <script src="script.js"></script>
 
-<!-- Back to Top Button -->
 <a href="#" class="back-to-top" id="backToTop">↑</a>
 
 </body>
