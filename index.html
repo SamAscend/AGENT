@@ -9,22 +9,20 @@
 </head>
 <body>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/6281380603561?text=Halo%20saya%20tertarik%20jadi%20partner%20bisnis" target="_blank" class="wa-float">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<!-- Language Toggle -->
+<!-- Language Toggle - Pojok Kiri Bawah -->
 <div class="lang-toggle">
   <button class="lang-btn active" data-lang="id">🇮🇩 ID</button>
   <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
 </div>
 
-<!-- Navbar -->
+<!-- Navbar - Navy -->
 <nav id="navbar">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-icon">S</div>
-    <span>SYNERGY</span>
+    <div class="nav-logo-text">
+      <div class="nav-logo-main">SYNERGY<span>.</span></div>
+      <div class="nav-logo-sub">business partner</div>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html" data-key="nav_home">Beranda</a></li>
@@ -36,7 +34,7 @@
   </ul>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero Section - PUTIH -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-left">
@@ -67,12 +65,44 @@
         <div class="card-highlight">
           <div class="big-number">30 BP</div>
           <p style="margin-top: 8px;" data-key="card_desc">= Potensi Passive Income</p>
-          <div style="font-size: 1.8rem; font-weight: 800; color: var(--gold-light); margin-top: 16px;">270 Juta/bulan</div>
+          <div style="font-size: 1.8rem; font-weight: 800; color: var(--gold); margin-top: 16px;">270 Juta/bulan</div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- SLIDER SECTION -->
+<div class="slider-container">
+  <div class="slider">
+    <div class="slider-track" id="sliderTrack">
+      <div class="slider-slide">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=400&fit=crop" alt="Financial freedom">
+        <div class="slider-caption">
+          <h3>Kebebasan Finansial</h3>
+          <p>Bangun passive income dari sistem overriding</p>
+        </div>
+      </div>
+      <div class="slider-slide">
+        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=400&fit=crop" alt="Team building">
+        <div class="slider-caption">
+          <h3>Bangun Tim Anda</h3>
+          <p>Kolaborasi dan tumbuh bersama partner bisnis</p>
+        </div>
+      </div>
+      <div class="slider-slide">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=400&fit=crop" alt="Reward and success">
+        <div class="slider-caption">
+          <h3>Raih Reward Spesial</h3>
+          <p>iPad, cash bonus, hingga trip ke Melbourne</p>
+        </div>
+      </div>
+    </div>
+    <button class="slider-btn slider-prev" id="sliderPrev">❮</button>
+    <button class="slider-btn slider-next" id="sliderNext">❯</button>
+  </div>
+  <div class="slider-dots" id="sliderDots"></div>
+</div>
 
 <!-- Trust Bar -->
 <div class="trust-bar">
@@ -83,33 +113,22 @@
   <div class="trust-item" data-key="trust5">OJK Certified</div>
 </div>
 
-<!-- CTA Section -->
+<!-- CTA Section - Navy -->
 <section class="cta-section">
   <h2 data-key="cta_title">Siap Ubah <em>Masalah Jadi Peluang?</em></h2>
   <p data-key="cta_desc">Bergabunglah bersama partner yang sudah merasakan manfaat sistem income berulang.</p>
   <a href="rencana.html" class="btn-primary" data-key="cta_btn">Kenali Masalahnya →</a>
 </section>
 
+<!-- Footer - Navy -->
 <footer>
   <div class="footer-copy">© 2026 SYNERGY — Bangun Masa Depan Finansial.</div>
 </footer>
 
 <script src="script.js"></script>
 
-<!-- STICKY BOTTOM CTA - FIX: Tombolnya ada lagi -->
-<div class="sticky-cta">
-  <div class="sticky-container">
-    <p class="sticky-text">💬 <span data-key="sticky_text">Siap Bangun Passive Income?</span></p>
-    <a href="https://wa.me/6281380603561" class="btn-sticky" data-key="sticky_btn">Konsultasi Gratis →</a>
-  </div>
-</div>
-
-<!-- HAPUS FLOATING SHAPES (karena bikin efek cahaya yang lo gak suka) -->
-<!-- 
-<div class="floating-shape shape-1"></div>
-<div class="floating-shape shape-2"></div>
-<div class="floating-shape shape-3"></div>
--->
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top" id="backToTop">↑</a>
 
 </body>
 </html>
